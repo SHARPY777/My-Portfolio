@@ -1,6 +1,12 @@
 import React from "react";
+import Link from 'next/link'
+
 
 function Header() {
+  
+  
+    //window.location.href = "https://www.linkedin.com/in/prasad-shelar-a86399235";
+  
   return (
     <header className="py-4">
       <div className="mx-10 sm:mx-auto max-w-6xl px-4 flex items-center justify-between border border-white p-3 rounded-full">
@@ -22,13 +28,19 @@ function Header() {
 
         {/* Right Part */}
         <div className="flex space-x-3 items-center">
-          <button className="hidden md:inline-block text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600">
+           <Link href="https://www.linkedin.com/in/prasad-shelar-a86399235" passHref legacyBehavior>
+           <button className="hidden md:inline-block text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600"
+          >
             Linkedin
           </button>
+          </Link>
 
-          <buttin className="border cursor-pointer border-gray-500 px-4 py-2 text-white rounded-full hover:bg-black">
+        
+          <Link href="https://github.com/SHARPY777" passHref legacyBehavior>
+          <button className="border cursor-pointer border-gray-500 px-4 py-2 text-white rounded-full hover:bg-black">
             Github
-          </buttin>
+          </button>
+          </Link>
         </div>
       </div>
     </header>

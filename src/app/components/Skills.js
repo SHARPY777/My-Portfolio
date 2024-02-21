@@ -151,7 +151,7 @@ function Skills() {
         ))}
       </div>
   
-      <div className="md:w-1/2 z-auto pt-2 md:mt-0">
+      <div className="md:w-1/2 z-auto pt-2 md:mt-0 ">
         <div className="container" ref={container}></div>
       </div>
     </div>

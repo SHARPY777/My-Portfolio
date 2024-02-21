@@ -1,85 +1,97 @@
-"use client";
-import { groq } from "next-sanity";
-import React, { useState, useEffect } from "react";
-
-async function getData() {
-  return client.fetch(groq`*[_type == "experience"]`);
-}
+import Image from "next/image";
 
 function Experience() {
-
   const cardsData = [
     {
-      name: "Frontend Developer at Chance",
-      image:
-        "https://play-lh.googleusercontent.com/mARUNHonOc6MW2rsbr7V9h1CMM0EbloWbfOw7E64K_r2QwCzTPAmaOD_VjlzgT4syA=w480-h960-rw",
-      title: "Frontend Developer at Chance",
+      name: "E-Commerce App User Interface",
+      image: "/ui1.png",
       description: [
-        "Learn to code the easier way and grow with the community",
-        "Be consistent and flexible, always one line of code at a time",
-        "Embark on your coding expedition, where the community supports your growth",
-        "Embrace the power of adaptability and uniformity, leaving a trail of code",
+        "Intuitive Navigation: Clear category menus, search, and filters enhance user experience by swiftly guiding shoppers to desired products.",
+        "Visual Appeal: High-quality images, consistent branding, and attractive colors create an engaging shopping atmosphere.",
+        "Streamlined Checkout: Simplified forms, guest checkout, and progress indicators minimize friction, encouraging seamless purchases.",
+        "Responsive Design: Compatibility across devices with responsive layouts and touch-friendly features enhances accessibility and engagement.",
       ],
     },
     {
-      name: "App Developer at Patilkaki",
+      name: "Quality Walls Restaurant App",
+      video: "/RestaurantApp.mp4",
       description: [
-        "Learn to code the easier way and grow with the community",
-        "Be consistent and flexible, always one line of code at a time",
-        "Embark on your coding expedition, where the community supports your growth",
-        "Embrace the power of adaptability and uniformity, leaving a trail of code",
+        "Sleek and Intuitive Design: Crafted a sleek and intuitive user interface(UI) for the Quality Walls Restaurant app, featuring modern design elements and smooth navigation paths, enhancing user engagement and satisfaction.",
+        "Responsive Layout: Developed a responsive layout for the app, ensuring seamless accessibility and optimal viewing experience across various devices, including smartphones, tablets, and desktops, catering to a diverse user base.",
+        "Eye - catching Visuals: Incorporated eye- catching visuals, including high - quality images of dishes, vibrant color schemes, and appealing typography, to captivate users' attention and stimulate their appetite, resulting in increased user retention and conversion rates.",
+        "User - friendly Interaction: Implemented user - friendly interaction patterns, such as intuitive touch gestures, interactive menus, and quick access to essential features, facilitating effortless browsing and ordering processes, ultimately enhancing the overall user experience."
       ],
     },
     {
-      name: "Content Creator at Code Feast",
-      image:
-        "https://media.licdn.com/dms/image/C4D0BAQExtG371zD5dA/company-logo_200_200/0/1669296742664/codefeast_logo?e=1701907200&v=beta&t=LA1tehO1JpZgaHMElen6VrWF5xemCuq6bozHh5vY3MM",
+      name: "Netflix-Clone with Firebase Authentication",
+      video: "/Netflix.mp4",
+
       description: [
-        "Learn to code the easier way and grow with the community",
-        "Be consistent and flexible, always one line of code at a time",
-        "Embark on your coding expedition, where the community supports your growth",
-        "Embrace the power of adaptability and uniformity, leaving a trail of code",
+        "Custom User Profiles: Implemented customizable user profiles within Firebase Authentication, allowing users to personalize their accounts with avatars, display names, and preferences for a tailored experience",
+        "Firebase Authentication Integration: Seamlessly integrated Firebase authentication for secure user registration and login, ensuring user data privacy and authentication flow.",
+        "Responsive Design: Developed a responsive design ensuring seamless user experience across various devices, from desktops to mobile devices, enhancing accessibility and usability.",
+        "User-friendly Navigation: Implemented intuitive navigation patterns, including a familiar browsing interface with categories, genres, and personalized recommendations, allowing users to effortlessly discover and access content."
+      ],
+    },
+    {
+      name: "Food Delivery User Experience and User Interface",
+      image: "/ui2.png",
+
+      description: [
+        "Visual Hierarchy: Utilizes a clear visual hierarchy with prominent call-to-action buttons for key actions such as placing an order, ensuring that users can easily navigate the interface and complete desired tasks.",
+
+        "Consistent Branding: Maintains consistent branding elements throughout the UI, including logo placement, color scheme, and typography, reinforcing brand identity and creating a cohesive user experience.",
+        "Responsive Design: Optimized for various devices, including smartphones, tablets, and desktops, ensuring consistent and intuitive user experience across different screen sizes and resolutions.",
+
+        "Visual Appeal: Visually appealing interface with high-quality images of food items, vibrant color schemes, and intuitive navigation elements, enticing users and enhancing engagement with the platform."
       ],
     },
   ];
-  
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    getData()
-      .then((data) => {
-        setPosts(data);
-      })
-      .catch((error) => {
-        console.log("error fetching posts", error);
-      });
-  }, []);
+
+
   return (
     <>
       <h3 className="tracking-[20px] mx-auto text-center mb-10 uppercase text-white text-2xl">
-  Projects
-</h3>
+        Projects
+      </h3>
 
-<div className="max-w-6xl mx-auto px-8 lg:px-0 grid grid-cols-1 lg:grid-cols-3 mt-8 mb-20">
-  {cardsData.map((item, index) => (
-    <div className="bg-slate-400 p-6 rounded-lg shadow-md mx-4" key={index}>
-      <div className="flex items-center justify-center">
-        {item.image && (
-          <img
-            className="rounded-full w-32 h-32 mx-auto md:mx-0 object-contain"
-            src={item.image}
-            alt={item.name}
-          />
-        )}
-      </div>
-      <h4 className="text-xl text-white font-bold mb-2 mt-4">{item.name}</h4>
-      <ul className="text-xl text-white font-light text-left list-disc">
-        {item.description.map((point, index) => (
-          <li key={index}>{point}</li>
+      <div className="max-w-2lg mx-auto px-8 lg:px-0 grid grid-cols-1 lg:grid-cols-4 mt-8 mb-20">
+
+        {cardsData.map((item, index) => (
+          <div className="bg-purple-400 p-6 rounded-lg shadow-md mx-4 w-100 transform transition-transform hover:scale-125" key={index}>
+
+            <div className="flex items-center justify-center" >
+              {item.image && (
+                <img
+                  src={item.image}
+                  alt={item.name}
+
+                  className="rounded-t-lg"
+                />
+              )}
+              {item.video && (
+                <video
+
+                  src={item.video}
+                  layout="fill"
+                  objectFit="cover"
+                  controls
+                />
+              )}
+
+            </div>
+            <div className="mt-6">
+              <h4 className="text-xl text-black font-bold ">{item.name}</h4>
+              <ul className="text-lg text-black font-light text-left list-disc ">
+                {item.description.map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
         ))}
-      </ul>
-    </div>
-  ))}
-</div>
+      </div>
 
     </>
   );

@@ -4,6 +4,8 @@ import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Header from "./components/Header";
 import Skills from "./components/Skills";
+import Encryption from "./components/Encryption";
+
 
 export default function Home() {
   return (
@@ -16,8 +18,11 @@ export default function Home() {
       <Projects/>
 
       <Skills/>
-
+      
       <Contact/>
+
+      <Encryption/>
+      
     </main>
   );
 }
