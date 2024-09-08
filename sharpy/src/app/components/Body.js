@@ -53,12 +53,14 @@ function Body() {
             </h1>
 
             <div className="mb-5">
-              <Link
-                href="/#contact"
-                className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-purple-600 text-white"
-              >
-                Contact Me
-              </Link>
+            <Link
+  href="/#contact"
+  className=" inline-block  w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-purple-600 text-white mt-3"
+>
+<span className="block rounded-full px-7 py-3  hover:bg-purple-600">
+  Contact Me
+  </span>
+</Link>
               <Link
                 href="/PRASAD_RESUME.pdf"  // Make sure the href points to the correct path in the public folder
                 className=" inline-block  w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-purple-600 text-white mt-3"
