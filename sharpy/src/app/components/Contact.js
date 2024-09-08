@@ -11,22 +11,20 @@ function Contact() {
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:text-row max-w-7xl justify-evenly mx-auto items-center">
       
-      <h3 className="tracking-[20px] text-center uppercase text-white text-2xl ">
+      <h3 className="tracking-[20px] text-center uppercase text-white text-2xl  ">
         Contact
       </h3>
 
       <div className="flex flex-col space-y-5 items-start justify-center">
         <div className="space-y-5">
-          <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="h-8 w-8 animate-pulse" />
-            <p className="text-xl text-white text-center">
-              prasad.s.shelar@gmail.com
-            </p>
+        <div className="flex items-center space-x-4">
+            <EnvelopeIcon className="h-8 w-8 text-purple-400 animate-pulse" />
+            <p className="text-xl">prasad.s.shelar@gmail.com</p>
           </div>
 
-          <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="h-8 w-8 animate-pulse" />
-            <p className="text-xl text-white text-center">Nashik 422007</p>
+          <div className="flex items-center space-x-4">
+            <MapPinIcon className="h-8 w-8 text-purple-400 animate-pulse" />
+            <p className="text-xl">Nashik 422007</p>
           </div>
         </div>
 
@@ -62,9 +60,9 @@ function Contact() {
             className="outline-none bg-slate-400/10 rounded-sm w-80   px-6 py-4  text-gray-500 placeholder-gray-500"
           ></textarea>
 
-          <button
+<button
             type="submit"
-            className="bg-blue-500 px-4 py-3 rounded-sm font-bold w-80  text-white"
+            className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-600 px-4 py-3 rounded-lg font-bold text-white transition duration-300 ease-in-out transform hover:scale-105"
           >
             Submit
           </button>

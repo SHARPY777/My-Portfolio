@@ -2,6 +2,9 @@
 import lottie from "lottie-web";
 import React, { useRef, useEffect } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import Link from 'next/link'
+import { TypeAnimation } from "react-type-animation";
+
 
 function Body() {
   const animationData = require("../../../public/assets/projects.json");
@@ -12,6 +15,7 @@ function Body() {
   });
   const container = useRef(null);
   useEffect(() => {
+    lottie.destroy();
     lottie.loadAnimation({
       container: container.current,
       renderer: "svg",
@@ -25,40 +29,52 @@ function Body() {
       <div className="container px-4 mx-auto">
         {/* First part */}
         <div className="flex flex-col-reverse justify-between md:flex-row md:space-x-8">
-          <div className="w-full flex flex-col  item-start  md:w-2/4 mt-0 md:mt-28">
-            <h1 className="text-3xl lg:text-5xl font-semibold">
-              <span className="mr-3 text-white ">{text}</span>
-              <Cursor />
+          <div className="w-full flex flex-col  item-start  md:w-4/5 mt-0 md:mt-28">
+            <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-400">
+                Hello, I&apos;m{" "}
+              </span>
+              <br></br>
+              <TypeAnimation
+                sequence={[
+                  "Prasad",
+                  1500,
+                  "Mobile App Developer",
+                  1500,
+                  "Full Stack Developer",
+                  1500,
+                  "UI/UX Designer",
+                  1500,
+                ]}
+                wrapper="span"
+                speed={40}
+                repeat={Infinity}
+              />
             </h1>
-            <p className="text-white text-xl md:text-2xl mb-3 mt-2 ">
-              Motivated cross-platform mobile app
-              developer with a strong foundation in React Native and exceptional front-end
-              skills. Completed an intensive React Native
-              specialization, showcasing proficiency in
-              building seamless applications for both iOS and Android. Possess a keen eye for UI/UX
-              design principles, transforming concepts
-              into visually appealing and user-friendly
-              interfaces. Committed to continuous
-              learning, problem-solving, and
-              collaborative teamwork, with a proven
-              track record of delivering high-quality
-              results.
-            </p>
-            <div>
-              <button className="bg-blue-400 text-white px-4 py-1 rounded mr-4 hover:bg-blue-600">
-                Learn More
-              </button>
 
-              <button className="bg-gray-300 text-gray-700 px-4 py-1 rounded hover:bg-gray-400">
+            <div className="mb-5">
+              <Link
+                href="/#contact"
+                className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-purple-600 text-white"
+              >
                 Contact Me
-              </button>
+              </Link>
+              <Link
+                href="/PRASAD_RESUME.pdf"  // Make sure the href points to the correct path in the public folder
+                className=" inline-block  w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-purple-600 text-white mt-3"
+                target="_blank"  // Optional: Opens the PDF in a new tab
+                rel="noopener noreferrer"  // Recommended for security when using target="_blank"
+                download="Prasad_Shelar_Resume.pdf"  // This attribute forces the file to download with the specified name
+              >
+                <span className="block rounded-full px-5 py-3  hover:bg-purple-600">
+                  Download CV
+                </span>
+              </Link>
+
             </div>
-            <p className="text-blue-500 text-small font-normal mt-2">
-              Coding | Learnings | Lifestyle
+            <p className="text-purple-300 text-small font-normal mt-2">
+              Explorer of Passion | Quick Learner | Architect of my own Universe
             </p>
-            <h1 className="text-slate-400 text-xl">
-              Fresher | 5 projects Completed
-            </h1>
           </div>
 
           <div className="md:w-1/2 z-auto pt-2 md:mt-0">

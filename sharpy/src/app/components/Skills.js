@@ -120,6 +120,7 @@ function Skills() {
   const container = useRef(null);
   const animationData = require("../../../public/assets/hello.json");
   useEffect(() => {
+   
     lottie.loadAnimation({
       container: container.current,
       renderer: "svg",
@@ -139,12 +140,12 @@ function Skills() {
       });
   }, []);
   return (
-    <div className="">
+    <div className="mt-10">
     <h3 className="tracking-[20px] text-center uppercase text-white text-2xl">
       Skills
     </h3>
   
-    <div className="container mx-auto max-w-6xl flex flex-col-reverse md:flex-row items-center justify-between">
+    <div className="container mx-auto max-w-6xl flex flex-col-reverse mt-7 md:flex-row items-center justify-between">
       <div className="md:w-1/2 grid grid-cols-3 gap-5">
         {skills.map((item, index) => (
           <Skill key={index} item={item} />
