@@ -5,33 +5,12 @@ import TabButton from "./TabButton";
 
 const TAB_DATA = [
   {
-    title: "Experience",
-    id: "experience",
+    title: "Recent Work Experience",
+    id: "experience-2",
     content: (
-      
+
       <div>
-        <h3>Part-Time Internship at Oasis InfoByte</h3>
-    <p><strong>Duration:</strong> 1 April 2023 - 1 July 2023</p>
-    <p><strong>Role:</strong> Software Development Intern</p>
-    <p><strong>Responsibilities:</strong></p>
-    <ul className="list-disc pl-5">
-      <li>Worked on web development and designing tasks, contributing to both frontend and backend components.</li>
-      <li>Assisted in the creation and maintenance of websites, ensuring responsiveness and a smooth user experience.</li>
-      <li>Collaborated with team members to deliver high-quality, functional web solutions on time.</li>
-    </ul>
-    <p><strong>Technologies Used:</strong></p>
-    <ul className="list-disc pl-5">
-      <li>HTML/CSS</li>
-      <li>JavaScript</li>
-      <li>React</li>
-      <li>Node.js</li>
-      <li>Git</li>
-      <li>Responsive Web Design</li>
-    </ul>
-
-
-    <div className="mt-8"></div>
-        <h3>Full-Time Internship at Tifants Ingress LLP</h3>
+        <h3><strong>Full-Time Internship at Tifants Ingress LLP</strong></h3>
         <p><strong>Duration:</strong> 4 March 2024 - 4 September 2024</p>
         <p><strong>Role:</strong> Software Development Intern</p>
         <p><strong>Responsibilities:</strong></p>
@@ -49,6 +28,33 @@ const TAB_DATA = [
           <li>JavaScript</li>
           <li>MySQL</li>
         </ul>
+      </div>
+    ),
+  },
+  {
+    title: "Past Work Experience",
+    id: "experience-1",
+    content: (
+      
+      <div>
+        <h3><strong>Part-Time Internship at Oasis InfoByte</strong></h3>
+    <p><strong>Duration:</strong> 1 April 2023 - 1 July 2023</p>
+    <p><strong>Role:</strong> Software Development Intern</p>
+    <p><strong>Responsibilities:</strong></p>
+    <ul className="list-disc pl-5">
+      <li>Worked on web development and designing tasks, contributing to both frontend and backend components.</li>
+      <li>Assisted in the creation and maintenance of websites, ensuring responsiveness and a smooth user experience.</li>
+      <li>Collaborated with team members to deliver high-quality, functional web solutions on time.</li>
+    </ul>
+    <p><strong>Technologies Used:</strong></p>
+    <ul className="list-disc pl-5">
+      <li>HTML/CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Node.js</li>
+      <li>Git</li>
+      <li>Responsive Web Design</li>
+    </ul>
       </div>
     ),
   },
@@ -83,10 +89,23 @@ const TAB_DATA = [
       </ul>
     ),
   },
+  {
+    title: "Achievements",
+    id: "achievements",
+    content: (
+      <div>
+        <h3 className="text-xl font-bold">KPIT SPARKLE 2022</h3>
+        <ul className="list-disc pl-4 mt-2 space-y-2">
+          <li>Recognized as one of the top 100 innovators in KPIT SPARKLE.</li>
+          <li>Developed a startup idea for a Street Light Management System.</li>
+        </ul>
+      </div>
+    ),
+  }
 ];
 
 const AboutSection = () => {
-  const [tab, setTab] = useState("experience");
+  const [tab, setTab] = useState("experience-2");
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
@@ -97,45 +116,56 @@ const AboutSection = () => {
 
   return (
     <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/assets/about-image.png" width={500} height={500} />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-lg">
-          Motivated cross-platform mobile app
-              developer with a strong foundation in React Native and exceptional front-end
-              skills. Completed an intensive React Native
-              specialization, showcasing proficiency in
-              building seamless applications for both iOS and Android. Possess a keen eye for UI/UX
-              design principles, transforming concepts
-              into visually appealing and user-friendly
-              interfaces. Committed to continuous
-              learning, problem-solving, and
-              collaborative teamwork, with a proven
-              track record of delivering high-quality
-              results.
+      <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+        <div className="flex justify-center mb-6 md:mb-0">
+          <Image src="/assets/about-image.png" width={600} height={700} className="w-full h-auto object-cover" />
+        </div>
+        <div className="text-left flex flex-col h-full">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">About Me</h2>
+          <p className="text-base sm:text-lg">
+            Motivated cross-platform mobile app
+            developer with a strong foundation in React Native and exceptional front-end
+            skills. Completed an intensive React Native
+            specialization, showcasing proficiency in
+            building seamless applications for both iOS and Android. Possess a keen eye for UI/UX
+            design principles, transforming concepts
+            into visually appealing and user-friendly
+            interfaces. Committed to continuous
+            learning, problem-solving, and
+            collaborative teamwork, with a proven
+            track record of delivering high-quality
+            results.
           </p>
-          <div className="flex flex-row justify-start mt-8">
+          <div className="flex flex-wrap gap-2 mt-8 text-base">
             <TabButton
-              selectTab={() => handleTabChange("experience")}
-              active={tab === "experience"}
+              selectTab={() => handleTabChange("experience-2")}
+              active={tab === "experience-2"}
             >
-              {" "}
-              Experience{" "}
+              Professional Experience
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("experience-1")}
+              active={tab === "experience-1"}
+            >
+              Past Ventures
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              {" "}
-              Education{" "}
+              Education
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
-              {" "}
-              Certifications{" "}
+              Certifications
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("achievements")}
+              active={tab === "achievements"}
+            >
+              Achievements
             </TabButton>
           </div>
           <div className="mt-8">

@@ -16,14 +16,12 @@ const achievementsList = [
     postfix: "+",
   },
   {
-    prefix: "~",
     metric: "Certifications",
     value: "7",
   },
   {
-    metric: "Years of Experience",
+    metric: "Months of Experience",
     value: "9",
-    postfix: "-months",
   },
   {
     metric: "Graduation CGPA",
@@ -34,21 +32,21 @@ const achievementsList = [
 
 const AchievementsSection = () => {
   return (
-    <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
+    <div className="py-4 px-2 sm:py-8 sm:px-4 xl:py-8 xl:px-16">
+      <div className="border border-purple-400 rounded-md py-4 px-4 sm:py-6 sm:px-8 flex flex-wrap items-center justify-center sm:justify-between">
         {achievementsList.map((achievement, index) => {
           return (
             <div
               key={index}
-              className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
+              className="flex flex-col items-center justify-center mx-2 my-3 sm:my-0 sm:mx-4 sm:flex-1 text-center"
             >
-              <h2 className="text-white text-4xl font-bold flex flex-row">
+              <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold flex flex-row items-center">
                 {achievement.prefix}
                 <AnimatedNumbers
                   includeComma
                   animateToNumber={parseInt(achievement.value)}
                   locale="en-US"
-                  className="text-white text-4xl font-bold"
+                  className="text-white text-2xl sm:text-3xl md:text-4xl font-bold"
                   configs={(_, index) => {
                     return {
                       mass: 1,
@@ -59,7 +57,9 @@ const AchievementsSection = () => {
                 />
                 {achievement.postfix}
               </h2>
-              <p className="text-purple-300 text-base">{achievement.metric}</p>
+              <p className="text-purple-300 text-sm sm:text-base mt-1 sm:mt-2">
+                {achievement.metric}
+              </p>
             </div>
           );
         })}

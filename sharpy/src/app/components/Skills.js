@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef,useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Skill from "./Skill";
 import lottie from "lottie-web";
 
@@ -17,110 +17,109 @@ function Skills() {
       type: "HTML",
     },
     {
-      id: "0",
+      id: "1",
       image:
         "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
       progress: 80,
       type: "React",
     },
     {
-      id: "0",
+      id: "2",
       image:
         "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
       progress: 50,
       type: "Next Js",
     },
     {
-      id: "0",
+      id: "3",
       image:
         "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
       progress: 70,
       type: "Javascript",
     },
     {
-      id: "0",
+      id: "4",
       image:
         "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
       progress: 50,
       type: "Firebase",
     },
     {
-      id: "0",
+      id: "5",
       image:
         "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
       progress: 150,
       type: "React Native",
     },
-
     {
-      id: "0",
+      id: "6",
       image:
         "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
       progress: 40,
       type: "Tailwind",
     },
-
     {
-      id: "0",
+      id: "7",
       image:
         "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
       progress: 100,
       type: "Java",
     },
     {
-      id: "0",
+      id: "8",
       image:
         "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
       progress: 90,
       type: "CSS",
     },
     {
-      id: "0",
+      id: "9",
       image:
         "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
       progress: 130,
       type: "UI | UX",
     },
     {
-    id: "0",
+      id: "10",
       image:
         "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
       progress: 90,
       type: "Git & GitHub",
     },
     {
-    id: "0",
-        image:
-          "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
-        progress: 90,
-        type: "Mongo DB",
+      id: "11",
+      image:
+        "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
+      progress: 90,
+      type: "Mongo DB",
     },
     {
-        id: "0",
-          image:
-            "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
-          progress: 80,
-          type: "C | C++",
+      id: "12",
+      image:
+        "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
+      progress: 80,
+      type: "C | C++",
     },
     {
-          id: "0",
-            image:
-              "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
-            progress: 130,
-            type: "Python",
+      id: "13",
+      image:
+        "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
+      progress: 130,
+      type: "Python",
     },
     {
-        id: "0",
-        image:
-          "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
-        progress: 110,
-        type: "SQL",
+      id: "14",
+      image:
+        "https://images.pexels.com/photos/1268068/pexels-photo-1268068.jpeg?auto=compress&cs=tinysrgb&w=800",
+      progress: 110,
+      type: "SQL",
     },  
   ];
+
   const container = useRef(null);
   const animationData = require("../../../public/assets/hello.json");
+
   useEffect(() => {
-   
     lottie.loadAnimation({
       container: container.current,
       renderer: "svg",
@@ -129,7 +128,9 @@ function Skills() {
       animationData: animationData,
     });
   }, [animationData]);
-  const [posts,setPosts] = useState([]);
+
+  const [posts, setPosts] = useState([]);
+  
   useEffect(() => {
     getData()
       .then((data) => {
@@ -139,25 +140,25 @@ function Skills() {
         console.log("error fetching posts", error);
       });
   }, []);
+
   return (
-    <div className="mt-10">
-    <h3 className="tracking-[20px] text-center uppercase text-white text-2xl">
-      Skills
-    </h3>
+    <div className="mt-10 px-4 sm:px-6 lg:px-8">
+      <h3 className="tracking-[20px] text-center uppercase text-white text-2xl sm:text-3xl">
+        Skills
+      </h3>
   
-    <div className="container mx-auto max-w-6xl flex flex-col-reverse mt-7 md:flex-row items-center justify-between">
-      <div className="md:w-1/2 grid grid-cols-3 gap-5">
-        {skills.map((item, index) => (
-          <Skill key={index} item={item} />
-        ))}
-      </div>
+      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between mt-7">
+        <div className="md:w-1/2 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+          {skills.map((item) => (
+            <Skill key={item.id} item={item} />
+          ))}
+        </div>
   
-      <div className="md:w-1/2 z-auto pt-2 md:mt-0 ">
-        <div className="container" ref={container}></div>
+        <div className="md:w-1/2 z-auto pt-2 md:mt-0 flex justify-center">
+          <div className="w-full h-full max-w-xs sm:max-w-md md:max-w-lg" ref={container}></div>
+        </div>
       </div>
     </div>
-  </div>
-  
   );
 }
 
