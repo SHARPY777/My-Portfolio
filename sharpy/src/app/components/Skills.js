@@ -154,7 +154,7 @@ function Skills() {
           ))}
         </div>
   
-        <div className="md:w-1/2 z-auto pt-2 md:mt-0 flex justify-center">
+        <div className="md:w-1/2 z-auto pt-2 md:mt-0 flex justify-center mb-16">
           <div className="w-full h-full max-w-xs sm:max-w-md md:max-w-lg" ref={container}></div>
         </div>
       </div>

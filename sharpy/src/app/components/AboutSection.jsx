@@ -116,64 +116,70 @@ const AboutSection = () => {
 
   return (
     <section className="text-white" id="about">
-      <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <div className="flex justify-center mb-6 md:mb-0">
-          <Image src="/assets/about-image.png" width={600} height={700} className="w-full h-auto object-cover" />
+    <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className="w-full">
+        <Image
+          src="/assets/about-image.png"
+          width={600}
+          height={700}
+          layout="responsive"
+          className="object-cover"
+        />
+      </div>
+      <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">About Me</h2>
+        <p className="text-base md:text-lg">
+          Motivated cross-platform mobile app
+          developer with a strong foundation in React Native and exceptional front-end
+          skills. Completed an intensive React Native
+          specialization, showcasing proficiency in
+          building seamless applications for both iOS and Android. Possess a keen eye for UI/UX
+          design principles, transforming concepts
+          into visually appealing and user-friendly
+          interfaces. Committed to continuous
+          learning, problem-solving, and
+          collaborative teamwork, with a proven
+          track record of delivering high-quality
+          results.
+        </p>
+        <div className="flex flex-wrap mt-8 text-base">
+          <TabButton
+            selectTab={() => handleTabChange("experience-2")}
+            active={tab === "experience-2"}
+          >
+            Professional Experience
+          </TabButton>
+          <TabButton
+            selectTab={() => handleTabChange("experience-1")}
+            active={tab === "experience-1"}
+          >
+            Past Ventures
+          </TabButton>
+          <TabButton
+            selectTab={() => handleTabChange("education")}
+            active={tab === "education"}
+          >
+            Education
+          </TabButton>
+          <TabButton
+            selectTab={() => handleTabChange("certifications")}
+            active={tab === "certifications"}
+          >
+            Certifications
+          </TabButton>
+          <TabButton
+            selectTab={() => handleTabChange("achievements")}
+            active={tab === "achievements"}
+          >
+            Achievements
+          </TabButton>
         </div>
-        <div className="text-left flex flex-col h-full">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base sm:text-lg">
-            Motivated cross-platform mobile app
-            developer with a strong foundation in React Native and exceptional front-end
-            skills. Completed an intensive React Native
-            specialization, showcasing proficiency in
-            building seamless applications for both iOS and Android. Possess a keen eye for UI/UX
-            design principles, transforming concepts
-            into visually appealing and user-friendly
-            interfaces. Committed to continuous
-            learning, problem-solving, and
-            collaborative teamwork, with a proven
-            track record of delivering high-quality
-            results.
-          </p>
-          <div className="flex flex-wrap gap-2 mt-8 text-base">
-            <TabButton
-              selectTab={() => handleTabChange("experience-2")}
-              active={tab === "experience-2"}
-            >
-              Professional Experience
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("experience-1")}
-              active={tab === "experience-1"}
-            >
-              Past Ventures
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              Education
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              Certifications
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("achievements")}
-              active={tab === "achievements"}
-            >
-              Achievements
-            </TabButton>
-          </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
-          </div>
+        <div className="mt-8">
+          {TAB_DATA.find((t) => t.id === tab).content}
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 };
 

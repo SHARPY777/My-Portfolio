@@ -19,7 +19,7 @@ function Header() {
   ];
 
   return (
-    <header className="py-auto">
+    <header className="py-auto mx-3 my-3 ">
     <div className="container mx-auto px-2 sm:px-4 lg:px-6 flex flex-col sm:flex-row items-center justify-between border border-white p-2 sm:p-3 lg:p-4 rounded-full overflow-x-auto">
       
       {/* Left Part */}
