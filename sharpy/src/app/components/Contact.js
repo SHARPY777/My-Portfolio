@@ -32,7 +32,7 @@ function Contact() {
           Contact
         </h3>
 
-        <div className="flex flex-col space-y-5 items-start justify-center mb-60">
+        <div className="flex flex-col space-y-5 items-start justify-center mb-60 mt-10">
           <div className="space-y-5">
             <div className="flex items-center space-x-4">
               <EnvelopeIcon className="h-8 w-8 text-purple-400 animate-pulse" />
